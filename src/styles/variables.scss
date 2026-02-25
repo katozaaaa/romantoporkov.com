@@ -14,15 +14,16 @@ $color: (
 );
 
 $breakpoints: (
-  sd: 1439,
   // (small desktop) < 1440px
-  lt: 1279,
+  sd: 1439px,
   // (large tablet) < 1280px
-  st: 1023,
+  lt: 1279px,
   // (small tablet) < 1024px
-  lm: 767,
+  st: 1023px,
   // (large mobile) < 768px
-  sm: 575 // (small mobile) < 576px
+  lm: 767px,
+  // (small mobile) < 576px
+  sm: 575px
 );
 
 $font-family: (

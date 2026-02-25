@@ -3,6 +3,7 @@
 @use '../../styles/mixins' as m;
 
 .experience {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   gap: 37px;
@@ -20,6 +21,14 @@
     padding-block: 20px 50px;
     width: 100%;
     border-top: 0.5px solid map.get(v.$color, grey, 200);
+
+    @container (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
   }
 
   &__info {
@@ -42,6 +51,12 @@
     flex-direction: column;
     gap: 1em;
     list-style-type: none;
+
+    @container (max-width: 600px) {
+      flex: unset;
+      align-self: flex-end;
+      max-width: 381px;
+    }
   }
 
   &__dutie {
@@ -56,6 +71,7 @@
 }
 
 .skills {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   gap: 37px;
@@ -64,12 +80,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px 37px;
+
+    @container (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__group {
     display: flex;
     flex-direction: column;
     gap: 1em;
+
+    &:nth-child(even) {
+      @container (max-width: 600px) {
+        justify-self: end;
+      }
+    }
   }
 
   &__group-title {
@@ -121,6 +147,7 @@
 }
 
 .education {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   gap: 37px;
@@ -129,6 +156,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 37px;
+
+    @container (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 323px;
+      width: 100%;
+    }
+
+    &:nth-child(even) {
+      @container (max-width: 600px) {
+        align-self: flex-end;
+      }
+    }
   }
 
   &__spec {
@@ -137,6 +177,7 @@
 }
 
 .recommendations {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   gap: 37px;
@@ -152,6 +193,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 37px;
+
+    @container (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 323px;
+      width: 100%;
+    }
+
+    &:nth-child(even) {
+      @container (max-width: 600px) {
+        align-self: flex-end;
+      }
+    }
   }
 
   &__item-recommender-post {
