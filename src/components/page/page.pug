@@ -13,12 +13,12 @@ mixin page(options)
     body.page.js-page-root
       +header
 
-      .container.page__container
+      .container.page__container.js-page-container
         .page__aside-wrapper
           +aside.page__aside
 
         .page__content-wrapper
-          main.main.page__main
+          main.main.page__main.js-page-main
             block
 
             if process.env.NODE_ENV === 'production'

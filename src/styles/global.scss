@@ -55,4 +55,8 @@ picture {
   padding: 0 30px;
   max-width: 1280px;
   width: 100%;
+
+  @media (max-width: 767px) {
+    padding: 0 16px;
+  }
 }

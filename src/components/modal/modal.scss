@@ -6,7 +6,6 @@
   position: fixed;
   top: 0;
   right: 0;
-  max-width: calc(30px + 50px + 812px + (100vw - 1280px) / 2);
   width: 100%;
   height: 100%;
   background-color: map.get(v.$color, black, 100);
@@ -21,9 +20,12 @@
     display: flex;
     flex-direction: column;
     padding: 20px 30px 20px 50px;
-    max-width: calc(812px + 30px + 50px);
     width: 100%;
     height: 100%;
+
+    @media (max-width: 767px) {
+      padding: 20px 16px;
+    }
   }
 
   &__header {

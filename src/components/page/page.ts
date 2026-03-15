@@ -56,14 +56,50 @@ export default class Page {
 
   _initContactModal() {
     const contactModal = this._root.querySelector('.js-contact-modal')
+
     if (!(contactModal instanceof HTMLElement)) {
       return
     }
-    const modal = new Modal({ root: contactModal })
+
+    const modal = new Modal({
+      root: contactModal,
+      width: () => {
+        const isMobile = window.innerWidth <= 767
+
+        if (isMobile) {
+          return "100vw"
+        }
+
+
+        const main = this._root.querySelector('.js-page-main')
+        const pageContainer = this._root.querySelector('.js-page-container')
+
+        let width: string | undefined = undefined
+        if (main instanceof HTMLElement && pageContainer instanceof HTMLElement) {
+          const rootWidth = this._root.clientWidth
+          const containerWidth = pageContainer.clientWidth
+          const containerComputedStyles = window.getComputedStyle(pageContainer)
+          const containerRowGap = containerComputedStyles.getPropertyValue('row-gap')
+          const containerRightPadding = containerComputedStyles.getPropertyValue('padding-right')
+
+          width = `calc(
+            ${main.clientWidth}px + 
+            ${containerRightPadding} +
+            ${containerRowGap} +
+            ${`(${rootWidth}px - ${containerWidth}px) / 2`}
+          )`
+        }
+
+        return width !== undefined ? width : '100%'
+      }
+    })
+
     this._contactModal = modal
+
     if (this._footer) {
       this._footer.initContactButton(modal.open.bind(modal))
     }
+
     this._updateModalElementsSizeWhenStylesIsLoaded()
     this._initResizeListener()
   }

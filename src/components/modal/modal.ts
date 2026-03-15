@@ -1,25 +1,44 @@
 import { gsap } from 'gsap'
 
+type ModalWidth = number | string
+
 interface ModalOptions {
-  root?: HTMLElement
+  root: HTMLElement,
+  width?: ModalWidth | (() => ModalWidth),
 }
 
 export default class Modal {
   _root: HTMLElement
+  _width?: ModalWidth | (() => ModalWidth)
   _animation: gsap.core.Tween
 
   constructor(options: ModalOptions) {
-    const { root } = options
+    const { root, width } = options
     if (!(root instanceof HTMLElement)) {
       throw new Error('No root element found')
     }
     this._root = root
+
+    if (width) {
+      this._width = width
+
+      if (typeof this._width !== 'function') {
+        const width = this._width
+        this._root.style.width = typeof width === 'string' ? width : `${width}px`
+      }
+    }
+
     this._handleOutsideClick = this._handleOutsideClick.bind(this)
     this._animation = this._setUpAnimation()
     this._initCloseButton()
   }
 
   open() {
+    if (this._width !== undefined && typeof this._width === 'function') {
+      const width = this._width()
+      this._root.style.width = typeof width === 'string' ? width : `${width}px`
+    }
+
     this.toggle(true)
   }
 
