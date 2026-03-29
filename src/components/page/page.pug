@@ -6,6 +6,10 @@ mixin page(options)
       meta(charset='UTF-8')
       meta(http-equiv='X-UA-Compatible', content='IE=Edge')
       meta(name='viewport', content='width=device-width,initial-scale=1')
+      meta(
+        name='robots',
+        content=process.env.VERCEL_GIT_COMMIT_REF === 'main' ? 'index, follow' : 'noindex, nofollow'
+      )
 
       if process.env.NODE_ENV === 'production'
         link(rel='stylesheet', href='css/styles.min.css')
