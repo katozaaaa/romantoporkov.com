@@ -34,7 +34,7 @@
     padding-inline: 0.5em;
     color: map.get(v.$color, grey, 100);
     background-color: map.get(v.$color, black, 100);
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   &:before {
@@ -53,11 +53,11 @@
 
   &__field {
     flex-grow: 1;
-    padding-block: 12px;
+    padding-block: 0.75rem;
     width: 100%;
     outline: none;
     border: none;
-    border-bottom: 1px solid map.get(v.$color, grey, 200);
+    border-bottom: 0.0625rem solid map.get(v.$color, grey, 200);
     color: map.get(v.$color, grey, 100);
     background-color: transparent;
     resize: none;

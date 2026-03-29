@@ -14,16 +14,16 @@ $color: (
 );
 
 $breakpoints: (
-  // (small desktop) < 1440px
-  sd: 1439px,
-  // (large tablet) < 1280px
-  lt: 1279px,
-  // (small tablet) < 1024px
-  st: 1023px,
-  // (large mobile) < 768px
-  lm: 767px,
-  // (small mobile) < 576px
-  sm: 575px
+  // (small desktop) < 90rem
+  sd: 89.9375rem,
+  // (large tablet) < 80rem
+  lt: 79.9375rem,
+  // (small tablet) < 64rem
+  st: 63.9375rem,
+  // (large mobile) < 48rem
+  lm: 47.9375rem,
+  // (small mobile) < 36rem
+  sm: 35.9375rem
 );
 
 $font-family: (
@@ -39,29 +39,29 @@ $font-family: (
 
 $font-size: (
   h1: (
-    1439: 24px,
-    1279: 22px,
-    767: 20px
+    1439: 1.5rem,
+    1279: 1.375rem,
+    767: 1.25rem
   ),
   h2: (
-    1439: 15px,
-    1279: 15px,
-    767: 15px
+    1439: 0.9375rem,
+    1279: 0.9375rem,
+    767: 0.9375rem
   ),
   h3: (
-    1439: 12px,
-    1279: 12px,
-    767: 12px
+    1439: 0.75rem,
+    1279: 0.75rem,
+    767: 0.75rem
   ),
   body: (
-    1439: 16px,
-    1279: 15px,
-    767: 15px
+    1439: 1rem,
+    1279: 0.9375rem,
+    767: 0.9375rem
   ),
   body-small: (
-    1439: 16px,
-    1279: 15px,
-    767: 15px
+    1439: 1rem,
+    1279: 0.9375rem,
+    767: 0.9375rem
   )
 );
 

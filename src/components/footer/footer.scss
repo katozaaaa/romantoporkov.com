@@ -3,11 +3,11 @@
 
 .footer {
   &__wrapper {
-    padding-top: 350px;
-    border-top: 1px solid map.get(v.$color, grey, 200);
+    padding-top: 21.875rem;
+    border-top: 0.0625rem solid map.get(v.$color, grey, 200);
 
-    @media (max-width: 767px) {
-      padding-top: 175px;
+    @media (max-width: 47.9375rem) {
+      padding-top: 10.9375rem;
     }
   }
 }

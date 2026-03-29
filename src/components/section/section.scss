@@ -2,6 +2,6 @@
 @use '../../styles/variables' as v;
 
 .section {
-  padding-block: 30px 80px;
-  border-top: 1px solid map.get(v.$color, grey, 200);
+  padding-block: 1.875rem 5rem;
+  border-top: 0.0625rem solid map.get(v.$color, grey, 200);
 }

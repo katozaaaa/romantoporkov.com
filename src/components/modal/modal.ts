@@ -1,4 +1,5 @@
 import { gsap } from 'gsap'
+import { pxToRem } from '@scripts/utils/units'
 
 type ModalWidth = number | string
 
@@ -25,7 +26,7 @@ export default class Modal {
       if (typeof this._width !== 'function') {
         const width = this._width
         this._root.style.width =
-          typeof width === 'string' ? width : `${width}px`
+          typeof width === 'string' ? width : pxToRem(width)
       }
     }
 
@@ -37,7 +38,8 @@ export default class Modal {
   open() {
     if (this._width !== undefined && typeof this._width === 'function') {
       const width = this._width()
-      this._root.style.width = typeof width === 'string' ? width : `${width}px`
+      this._root.style.width =
+        typeof width === 'string' ? width : pxToRem(width)
     }
 
     document.documentElement.style.overflow = 'hidden'
@@ -61,7 +63,7 @@ export default class Modal {
   setHeaderMinHeight(minHeight: number) {
     const header = this._root.querySelector('.js-modal-header')
     if (header instanceof HTMLElement) {
-      header.style.minHeight = minHeight + 'px'
+      header.style.minHeight = pxToRem(minHeight)
     }
   }
 

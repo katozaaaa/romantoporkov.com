@@ -1,17 +1,21 @@
 .underlined-text {
-    position: relative;
-    white-space: nowrap;
+  position: relative;
+  white-space: nowrap;
 
-    &__line {
-        position: inherit;
-        white-space: inherit;
+  &__line {
+    position: inherit;
+    white-space: inherit;
+  }
+
+  &__underline {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0.0625rem;
+    background-color: currentColor;
+
+    @media (hover: none) {
+      display: none;
     }
-    
-    &__underline {
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 1px;
-        background-color: currentColor;
-    }
+  }
 }

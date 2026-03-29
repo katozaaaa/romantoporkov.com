@@ -7,11 +7,11 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 50px;
-    padding-bottom: 160px;
+    gap: 3.125rem;
+    padding-bottom: 10rem;
 
-    @media (max-width: 767px) {
-      padding-bottom: 80px;
+    @media (max-width: 47.9375rem) {
+      padding-bottom: 5rem;
     }
   }
 

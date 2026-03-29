@@ -5,6 +5,7 @@ import Footer from '@components/footer/footer'
 import Aside from '@components/aside/aside'
 import Modal from '@components/modal/modal'
 import Form from '@components/form/form'
+import { pxToRem, toRemLength } from '@scripts/utils/units'
 
 interface PageOptions {
   root?: HTMLElement
@@ -64,7 +65,8 @@ export default class Page {
     const modal = new Modal({
       root: contactModal,
       width: () => {
-        const isMobile = window.innerWidth <= 767
+        // rem value is used in media queries, so we need to calculate it based on the current viewport width
+        const isMobile = window.innerWidth <= 47.9375 * 16
 
         if (isMobile) {
           return '100vw'
@@ -86,11 +88,13 @@ export default class Page {
           const containerRightPadding =
             containerComputedStyles.getPropertyValue('padding-right')
 
+          console.log('rootWidth', rootWidth)
+
           width = `calc(
-            ${main.clientWidth}px + 
-            ${containerRightPadding} +
-            ${containerRowGap} +
-            ${`(${rootWidth}px - ${containerWidth}px) / 2`}
+            ${pxToRem(main.clientWidth)} + 
+            ${toRemLength(containerRightPadding)} +
+            ${toRemLength(containerRowGap)} +
+            ${`(${pxToRem(rootWidth)} - ${pxToRem(containerWidth)}) / 2`}
           )`
         }
 

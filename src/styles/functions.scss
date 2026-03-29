@@ -20,10 +20,21 @@
 @function fluid($min, $max, $min-vw: 360, $max-vw: 1440) {
   $slope: math.div(($max - $min), ($max-vw - $min-vw));
   $y-intercept: $min - $slope * $min-vw;
+  $min-rem: math.div($min, 16);
+  $max-rem: math.div($max, 16);
+  $y-intercept-rem: math.div($y-intercept, 16);
 
   @if $min > $max {
-    @return clamp(#{$max}px, #{$y-intercept}px + #{$slope * 100}vw, #{$min}px);
+    @return clamp(
+      #{$max-rem}rem,
+      #{$y-intercept-rem}rem + #{$slope * 100}vw,
+      #{$min-rem}rem
+    );
   }
 
-  @return clamp(#{$min}px, #{$y-intercept}px + #{$slope * 100}vw, #{$max}px);
+  @return clamp(
+    #{$min-rem}rem,
+    #{$y-intercept-rem}rem + #{$slope * 100}vw,
+    #{$max-rem}rem
+  );
 }

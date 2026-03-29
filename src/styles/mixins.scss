@@ -61,11 +61,11 @@
 @mixin font-styles($key) {
   @include font-style($key, 1439);
 
-  @media (max-width: 1279px) {
+  @media (max-width: 79.9375rem) {
     @include font-style($key, 1279);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     @include font-style($key, 767);
   }
 }

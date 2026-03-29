@@ -5,17 +5,17 @@
   &__container {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 3.125rem;
 
-    @media (max-width: 767px) {
+    @media (max-width: 47.9375rem) {
       flex-direction: column;
     }
   }
 
   &__aside-wrapper {
-    flex: 0 1 358px;
-    min-width: 240px;
-    border-top: 1px solid map.get(v.$color, grey, 200);
+    flex: 0 1 22.375rem;
+    min-width: 15rem;
+    border-top: 0.0625rem solid map.get(v.$color, grey, 200);
   }
 
   &__aside {
@@ -24,18 +24,18 @@
   }
 
   &__content-wrapper {
-    flex: 0 1 812px;
+    flex: 0 1 50.75rem;
   }
 
   &__contact-modal-form {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 3.125rem;
   }
 
   &__contact-modal-subject {
-    min-height: 200px;
+    min-height: 12.5rem;
   }
 
   &__contact-modal-submit {

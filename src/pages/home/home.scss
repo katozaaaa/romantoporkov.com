@@ -6,7 +6,7 @@
   container-type: inline-size;
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 2.3125rem;
 
   &__list {
     display: flex;
@@ -17,12 +17,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 30px;
-    padding-block: 20px 50px;
+    gap: 1.875rem;
+    padding-block: 1.25rem 3.125rem;
     width: 100%;
-    border-top: 0.5px solid map.get(v.$color, grey, 200);
+    border-top: 0.03125rem solid map.get(v.$color, grey, 200);
 
-    @container (max-width: 600px) {
+    @container (max-width: 37.5rem) {
       flex-direction: column;
     }
 
@@ -35,27 +35,27 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0.75rem;
   }
 
   &__company-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0.125rem;
     color: map.get(v.$color, grey, 100);
   }
 
   &__duties {
-    flex: 0 0 381px;
+    flex: 0 0 23.8125rem;
     display: flex;
     flex-direction: column;
     gap: 1em;
     list-style-type: none;
 
-    @container (max-width: 600px) {
+    @container (max-width: 37.5rem) {
       flex: unset;
       align-self: flex-end;
-      max-width: 381px;
+      max-width: 23.8125rem;
     }
   }
 
@@ -74,14 +74,14 @@
   container-type: inline-size;
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 2.3125rem;
 
   &__groups {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px 37px;
+    gap: 3rem 2.3125rem;
 
-    @container (max-width: 600px) {
+    @container (max-width: 37.5rem) {
       grid-template-columns: 1fr;
     }
   }
@@ -92,7 +92,7 @@
     gap: 1em;
 
     &:nth-child(even) {
-      @container (max-width: 600px) {
+      @container (max-width: 37.5rem) {
         justify-self: end;
       }
     }
@@ -122,14 +122,14 @@
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 2.3125rem;
 
   &__list {
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
     list-style-type: none;
   }
 
@@ -137,7 +137,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 4px;
+    gap: 0.25rem;
 
     svg {
       width: 1.5625em;
@@ -150,22 +150,22 @@
   container-type: inline-size;
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 2.3125rem;
 
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 37px;
+    gap: 2.3125rem;
 
-    @container (max-width: 600px) {
+    @container (max-width: 37.5rem) {
       grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 323px;
+      gap: 1rem;
+      max-width: 20.1875rem;
       width: 100%;
     }
 
     &:nth-child(even) {
-      @container (max-width: 600px) {
+      @container (max-width: 37.5rem) {
         align-self: flex-end;
       }
     }
@@ -180,29 +180,29 @@
   container-type: inline-size;
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 2.3125rem;
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 37px;
+    gap: 2.3125rem;
     list-style-type: none;
   }
 
   &__item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 37px;
+    gap: 2.3125rem;
 
-    @container (max-width: 600px) {
+    @container (max-width: 37.5rem) {
       grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 323px;
+      gap: 1rem;
+      max-width: 20.1875rem;
       width: 100%;
     }
 
     &:nth-child(even) {
-      @container (max-width: 600px) {
+      @container (max-width: 37.5rem) {
         align-self: flex-end;
       }
     }

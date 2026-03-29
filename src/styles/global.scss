@@ -11,7 +11,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  padding-block: 20px;
+  padding-block: 1.25rem;
   min-height: 100svh;
   box-sizing: border-box;
   color: map.get(v.$color, white, 100);
@@ -52,11 +52,11 @@ picture {
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding: 0 30px;
-  max-width: 1280px;
+  padding: 0 1.875rem;
+  max-width: 80rem;
   width: 100%;
 
-  @media (max-width: 767px) {
-    padding: 0 16px;
+  @media (max-width: 47.9375rem) {
+    padding: 0 1rem;
   }
 }
