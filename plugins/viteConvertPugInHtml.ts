@@ -11,10 +11,12 @@ const { cyan, green } = pc
 type PluginOptions = {
   pugOptions?: PugOptions
   locals?: Record<string, any>
-  defaultPage?: string
+  defaultPage: string
 }
 
-export const viteConvertPugInHtml = (options: PluginOptions = {}): Plugin => {
+export const viteConvertPugInHtml = (
+  options: PluginOptions = { defaultPage: 'index' }
+): Plugin => {
   const htmlToPugMap = new Map<string, string>()
   let viteConfig: ResolvedConfig
   let viteAliases: Alias[] = []
@@ -98,7 +100,14 @@ export const viteConvertPugInHtml = (options: PluginOptions = {}): Plugin => {
           extname(normalizedPugPath)
         )
         const entryKey = normalizePath(filenameWithoutExt)
-        const virtualHtmlPath = normalizePath(resolve(root, `${entryKey}.html`))
+        const virtualHtmlPath = normalizePath(
+          resolve(
+            root,
+            entryKey.endsWith(options.defaultPage)
+              ? 'index.html'
+              : `${entryKey}/index.html`
+          )
+        )
         rollupInput[entryKey] = virtualHtmlPath
         htmlToPugMap.set(virtualHtmlPath, normalizedPugPath)
       }
@@ -153,15 +162,11 @@ export const viteConvertPugInHtml = (options: PluginOptions = {}): Plugin => {
         let pugPath
         let cleanPath = requestPath.slice(1)
         if (cleanPath === '' || requestPath.endsWith('/')) {
-          cleanPath = cleanPath
-            ? `${cleanPath}${options.defaultPage}.html`
-            : `${options.defaultPage}.html`
+          cleanPath = cleanPath ? `${cleanPath}/index.html` : 'index.html'
         }
         let potentialHtmlPath = resolve(
           viteConfig.root,
-          cleanPath.endsWith('.html')
-            ? cleanPath
-            : `${cleanPath}/${options.defaultPage}.html`
+          cleanPath.endsWith('.html') ? cleanPath : `${cleanPath}/index.html`
         )
         pugPath = htmlToPugMap.get(normalizePath(potentialHtmlPath))
         if (!pugPath && !cleanPath.endsWith('.html')) {
