@@ -33,9 +33,16 @@ mixin aside
 
   aside.aside.js-aside&attributes(attributes)
     .aside__container
-      .aside__text A seasoned Senior Producer with 10+ years of experience, I excel in leading complex marketing and design projects from concept to completion.
+      .aside__text
+        | A specialist with 5+ years of experience.
+        | I am passionate about creating high-quality web applications and continuously improving my skills in frontend development.
       .aside__sub-container
-        .aside__image.js-aside-image
+        img.aside__image.js-aside-image(
+          src='/assets/images/handsome-guy.jpg',
+          width=358,
+          height=358,
+          alt='Roman Toporkov'
+        )
         .aside__links
           each row in links
             .aside__links-row

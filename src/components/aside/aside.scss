@@ -29,9 +29,10 @@
   }
 
   &__image {
+    object-fit: cover;
     width: 100%;
     aspect-ratio: 1;
-    background-color: map.get(v.$color, grey, 200);
+    filter: grayscale(100%);
   }
 
   &__links {

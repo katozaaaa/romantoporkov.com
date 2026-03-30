@@ -4,67 +4,54 @@ include src/components/_index.pug
   const data = {
     experience: [
       {
-        title: 'Senior Producer',
-        company: 'Creative Agency XYZ',
-        link: '/',
-        period: 'June 2022 – Present',
-        location: 'Remote & New York, NY ',
+        title: 'Frontend Developer',
+        company: 'TutorPlace',
+        link: 'https://tutorplace.ru/',
+        period: 'March 2022 – May 2025',
+        location: 'Saint-Petersburg, Russia',
         duties: [
-          'Seamlessly facilitate diverse creative experiences: from immersive installations to cinematic narratives. A catalyst for collaboration across all mediums.',
-          'Clients include: Lunethra, Driftwell, Clyra, Forgekind and more.'
+          'Participated in the development of a large-scale educational platform, contributing to the creation of a user-friendly interface and seamless user experience;',
+          'Creation of user interfaces and UI components (UI/UX, UX, UI), layout in HTML5, HTML, CSS3, CSS, SCSS, SASS, CSS modules, responsive layout, work with Figma and UI-kit;',
+          'Building architecture according to FSD / feature-sliced ​​design, module design, component architecture and best practices (patterns, DRY, SOLID);',
+          'Working with Redux, Redux Toolkit, RTK Query, Zustand, MobX, state management, business logic, forms and data processing;'
         ],
       },
       {
-        title: 'Senior Producer',
-        company: 'Pixel Studios',
-        link: '/',
-        period: 'December 2021 - June 2022',
-        location: 'New York, NY',
+        title: 'Frontend Developer',
+        company: 'Webest',
+        link: 'https://webest.ru/',
+        period: 'June 2025 - Present',
+        location: 'Remote',
         duties: [
-          'Orchestrated the creation of integrated video, motion, and photo content for multi-platform marketing campaigns, ensuring seamless execution and brand alignment.',
-          'Directed all phases of production operations (pre-production, production, post-production), meticulously managing budgets, contracts, and legal requirements to deliver projects on time and within quality standards.',
-          'developed and managed production schedules, creative strategies, and talent relations, optimizing resources to deliver high-quality content within budget parameters.',
-          'Clients include: Nestive, Zentrox, Pollenate, Vireo and more. '
+          'Frontend development using React/ReactJS/React Query, Next.js / Next (SSR, SSG, ISR), TypeScript and JavaScript (ES6+), using hooks, memuization, rendering and lazy loading;',
+          "Support and refinement of functionality, working with other people's code, refactoring the code base, creating documentation and project support;",
+          'Participation in commercial development of web applications and SPAs: architecture design, task decomposition, integration with REST API and WebSocket;',
         ],
-      },
-      {
-        title: 'Content Producer',
-        company: 'Creative Hub Studio',
-        link: '/',
-        period: 'October 2016 - March 2018',
-        location: 'Los Angeles, CA',
-        duties: [
-          'Facilitated clear and efficient communication across cross-functional teams (Marketing, Brand, Creative, IT, QA), ensuring seamless collaboration and project alignment.',
-          'Proactively identified and integrated industry trends, emerging technologies, and cultural insights to enhance creative output and maintain brand relevance.',
-          'Clients include: Lunethra, Forgekind and more.'
-        ],
-      },
+      }
     ],
     skills: [
       {
-        title: 'Project Management',
+        title: 'Engineering & Architecture',
         skills: [
-          'Budget Management & Forecasting',
-          'Timeline Development & Execution',
-          'Vendor & Contract Negotiation',
-          'On-Site Production Management',
+          'Designing scalable and maintainable frontend architectures',
+          'Working with legacy code without compromising product stability',
+          'Building reusable components and consistent system layers',
         ],
       },
       {
-        title: 'Strategic & Creative Oversight ',
+        title: 'Development Practices',
         skills: [
-          'Creative Strategy Development',
-          'Talent Relations & Management',
-          'Creative Direction Oversight',
-          'Brand Alignment',
+          'Writing clean, readable, and maintainable code',
+          'Giving and receiving constructive code reviews',
+          'Documenting decisions when it adds real value',
         ],
       },
       {
         title: 'Communication & Collaboration',
         skills: [
-          'Cross-Functional Team Leadership',
-          'Client Relationship Management',
-          'Stakeholder Communication',
+          'Clear communication with designers, backend engineers, and stakeholders',
+          'Ability to justify and defend technical decisions',
+          'Transparency about progress, risks, and trade-offs',
         ],
       },
     ],
@@ -76,9 +63,33 @@ include src/components/_index.pug
         },
       },
       {
+        name: 'Next',
+        icon: {
+          name: 'icon-nextjs-logo',
+        },
+      },
+      {
         name: 'TypeScript',
         icon: {
           name: 'icon-ts-logo',
+        },
+      },
+      {
+        name: 'Tailwind',
+        icon: {
+          name: 'icon-tailwind-logo',
+        },
+      },
+      {
+        name: 'Tanstack Query',
+        icon: {
+          name: 'icon-tanstack-query-logo',
+        },
+      },
+      {
+        name: 'Redux Toolkit',
+        icon: {
+          name: 'icon-redux-logo',
         },
       },
       {
@@ -102,14 +113,14 @@ include src/components/_index.pug
     ],
     recommendations: [
       {
-        recommenderName: 'Client, Driftwell',
-        recommenderPost: 'Executive Director',
-        text: 'Alexandra brings sunshine to creative teams. Her optimism, problem-solving, and clear communication drive success.',
+        recommenderName: 'Varvara Tikhomirova',
+        recommenderPost: 'Head of development department',
+        text: 'Roman is a creative professional who cares about the end product. He may have his own opinion on problem solving, which sometimes differs from that of his colleagues, but he always demonstrates a willingness and ability to make reasonable compromises, understanding the importance of teamwork.',
       },
       {
-        recommenderName: 'Creative Director, Creative Agency XYZ',
-        recommenderPost: 'Technical Director',
-        text: 'Alexandra is hungry to tackle new challenges. She’s delightful with clients and can diffuse a tense room with her laugh.',
+        recommenderName: 'German Stolyarov',
+        recommenderPost: 'Front-end Development Team Lead',
+        text: 'Good guy',
       },
     ]
   }
@@ -155,10 +166,10 @@ include src/components/_index.pug
   +section.education
     h2.title.title--type_h3.education__title Education
     .education__content
-      .education__university University of California, Los Angeles (UCLA)
+      .education__university Saint Petersburg State University of Economics, Russia
       .education__details
-        .education__type Bachelor of Fine Arts in Graphic Design
-        .education__spec Minor: Studio Photography
+        .education__type Faculty of Applied Mathematics and Computer&nbsp;Science
+        .education__spec Speciality: Information security
 
   +section.recommendations
     h2.title.title--type_h3.recommendations__title Recommendations
