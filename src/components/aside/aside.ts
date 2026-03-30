@@ -8,23 +8,23 @@ interface AsideOptions {
 }
 
 export default class Aside {
-  _root: HTMLElement
+  root: HTMLElement
 
   constructor(options: AsideOptions) {
     const { root } = options
     if (!(root instanceof HTMLElement)) {
       throw new Error('No root element found')
     }
-    this._root = root
+    this.root = root
     this._initPin()
   }
 
   _initPin() {
     ScrollTrigger.create({
-      trigger: this._root,
+      trigger: this.root,
       pin: true,
       start: 'top top',
-      endTrigger: this._root.parentElement,
+      endTrigger: this.root.parentElement,
       end: 'bottom bottom'
     })
   }

@@ -187,10 +187,19 @@ export default class Page {
   }
 
   _initScrollScmoother() {
-    ScrollSmoother.create({
+    const smoother = ScrollSmoother.create({
       smooth: 2,
       speed: 0.7,
       effects: true
     })
+
+    if (
+      this._aside !== undefined &&
+      document.documentElement.clientWidth > 47.9375 * 16
+    ) {
+      smoother.effects(this._aside.root, {
+        speed: 'clamp(0.7)'
+      })
+    }
   }
 }
